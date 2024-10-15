@@ -1,0 +1,74 @@
+#include <FabGL.h>        // Biblioteca FabGL para gráficos e controle
+#include <SPI.h>          // Biblioteca para comunicação SPI
+
+// Configuração do display (por exemplo, ILI9341)
+#define TFT_CS   5    // Chip Select para o display TFT
+#define TFT_RST  16   // Reset do display
+#define TFT_DC   17   // Data/Command para o display
+
+FabGL::VGATextController DisplayController;
+
+// Inicialização do FabGL e display
+void setup() {
+  // Inicializa a comunicação serial
+  Serial.begin(115200);
+
+  // Configuração do controlador de vídeo FabGL
+  DisplayController.begin();
+  
+  // Configuração do modo gráfico (substitua os parâmetros conforme necessário)
+  DisplayController.setResolution(VGA_320x200_60Hz);
+  DisplayController.enableBackgroundPrimitiveDrawing(true);
+  
+  // Carregar e rodar o Doom
+  runDOOM(); // Função que chama o jogo Doom
+}
+
+void loop() {
+  // FabGL cuida de eventos automaticamente, portanto, não precisa de código no loop
+}
+
+// Função para rodar Doom
+void runDOOM() {
+  Serial.println("Iniciando Doom...");
+
+  // Aqui utilizamos a função da FabGL que chama o Doom
+  FabGL::doomMain();
+}
+#include <FabGL.h>        // Biblioteca FabGL para gráficos e controle
+#include <SPI.h>          // Biblioteca para comunicação SPI
+
+// Configuração do display (por exemplo, ILI9341)
+#define TFT_CS   5    // Chip Select para o display TFT
+#define TFT_RST  16   // Reset do display
+#define TFT_DC   17   // Data/Command para o display
+
+FabGL::VGATextController DisplayController;
+
+// Inicialização do FabGL e display
+void setup() {
+  // Inicializa a comunicação serial
+  Serial.begin(115200);
+
+  // Configuração do controlador de vídeo FabGL
+  DisplayController.begin();
+  
+  // Configuração do modo gráfico (substitua os parâmetros conforme necessário)
+  DisplayController.setResolution(VGA_320x200_60Hz);
+  DisplayController.enableBackgroundPrimitiveDrawing(true);
+  
+  // Carregar e rodar o Doom
+  runDOOM(); // Função que chama o jogo Doom
+}
+
+void loop() {
+  // FabGL cuida de eventos automaticamente, portanto, não precisa de código no loop
+}
+
+// Função para rodar Doom
+void runDOOM() {
+  Serial.println("Iniciando Doom...");
+
+  // Aqui utilizamos a função da FabGL que chama o Doom
+  FabGL::doomMain();
+}
